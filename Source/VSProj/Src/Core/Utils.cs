@@ -16,6 +16,7 @@ namespace IFix.Core
     {
         /// <summary>
         /// 判断一个方法是否能赋值到一个delegate变量
+        /// 验证签名一致性：返回值、参数数量、各参数类型（out修饰）
         /// </summary>
         /// <param name="delegateMethod">delegate变量的类型里头的invoke方法</param>
         /// <param name="method">待赋值的方法</param>
@@ -73,6 +74,7 @@ namespace IFix.Core
                     {
                         method = methods[i];
                         delegateAdptCache[delegateType] = method;
+                        break;
                     }
                 }
             }
